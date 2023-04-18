@@ -1,3 +1,3 @@
-import dropdownMenus from './dropdownMenus.js'
+import DropdownMenus from './DropdownMenus.js'
 
-dropdownMenus();
+customElements.define('dropdown-menus', DropdownMenus)
