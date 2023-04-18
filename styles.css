@@ -1,3 +1,7 @@
-.dropdown-menus {
-   opacity: 0;
+.dropdown-content{
+   display: none;
+}
+
+.visible{
+    display: block;
 }
