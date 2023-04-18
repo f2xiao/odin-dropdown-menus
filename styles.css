@@ -1,7 +1,8 @@
+/* dropdown content (hidden by default) */
 .dropdown-content{
    display: none;
 }
-
+/* show the dropdown-content on hover */
 .visible{
     display: block;
 }
