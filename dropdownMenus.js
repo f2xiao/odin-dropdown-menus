@@ -1,14 +1,22 @@
-// Select the button Element and the dropdown-content element 
-const btnEle = document.querySelector('.dropdown-btn');
-const dropdownContEle = document.querySelector('.dropdown-content');
+export default function(){
+    // Select the button Element and the dropdown-content element 
+    const btnEle = document.querySelectorAll('.dropdown-btn');
+    const dropdownContEle = document.querySelectorAll('.dropdown-content');
+    
 
-// register event handler on hover:
-// show the dropdown-content 
+    // register event handler on hover:
+    // show the dropdown-content 
 
-btnEle.addEventListener('mouseover', () => { 
-    dropdownContEle.classList.toggle('visible')
- })
+    btnEle.forEach((btn,index) => { 
+        
+        btn.addEventListener('mouseover', () => { 
+            dropdownContEle[index].classList.toggle('visible')
+        });
 
- btnEle.addEventListener('mouseout', () => { 
-    dropdownContEle.classList.toggle('visible')
- })
+        btn.addEventListener('mouseout', () => { 
+            dropdownContEle[index].classList.toggle('visible')
+        })
+        
+    })
+}
+
