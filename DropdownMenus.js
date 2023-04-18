@@ -21,7 +21,7 @@ style.textContent = `
     display: block;
 }`
 
-class DropdownMenus extends HTMLElement {
+export default class DropdownMenus extends HTMLElement {
     constructor(){
         super();
 
