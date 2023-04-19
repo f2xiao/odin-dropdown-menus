@@ -32,12 +32,34 @@ export default class DropdownMenus extends HTMLElement {
         const btnEle = shadow.querySelector('.dropdown-btn');
         const dropdownContEle = shadow.querySelector('.dropdown-content');
 
-        btnEle.addEventListener('mouseover', () => { 
-            dropdownContEle.classList.add('visible')
-         })
+        // retreve the type attribute value
+        let type = this.getAttribute('type');
+        let eventsType = [];
 
-        btnEle.addEventListener('mouseout', () => { 
-            dropdownContEle.classList.add('visible')
-         })
+        switch (type) {
+            case "hover":
+                eventsType = ['mouseover', 'mouseout'];
+                break;
+            case "click":
+                eventsType = ['click'];
+                break;
+            default:
+                eventsType = ['mouseover', 'mouseout'];
+                break;
+        }
+
+        // console.log(eventsType)
+
+
+       eventsType.forEach((event) => { 
+        console.log(event)
+            btnEle.addEventListener(event, () => {
+                dropdownContEle.classList.toggle('visible');
+
+            })
+        })
+
+        // TODO: when click outside the dropdown menu, hide the dropdown menus again
+
     }
 }
