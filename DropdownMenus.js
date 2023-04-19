@@ -34,32 +34,31 @@ export default class DropdownMenus extends HTMLElement {
 
         // retreve the type attribute value
         let type = this.getAttribute('type');
-        let eventsType = [];
-
-        switch (type) {
-            case "hover":
-                eventsType = ['mouseover', 'mouseout'];
-                break;
-            case "click":
-                eventsType = ['click'];
-                break;
-            default:
-                eventsType = ['mouseover', 'mouseout'];
-                break;
+        if(type=='hover' || type == null){
+            // default/'hover' type: hover the button to show/hide the menus
+            let eventsType = ['mouseover', 'mouseout'];
+            eventsType.forEach((event) => { 
+                console.log(event)
+                    btnEle.addEventListener(event, () => {
+                        dropdownContEle.classList.toggle('visible');
+                    })
+                })
+        }else if(type == 'click'){
+            // 'click' type: click to show and hide the menus
+            // When click outside the dropdown menu, hide the dropdown menus again
+            window.addEventListener('click', (event) => { 
+                // check if the btnEle is clicked
+                if(this.contains(event.target)){
+                    dropdownContEle.classList.toggle('visible');
+                }else{
+                    if(dropdownContEle.classList.contains('visible')){
+                        dropdownContEle.classList.remove('visible');
+                    }
+    
+                }
+             })
+    
         }
-
-        // console.log(eventsType)
-
-
-       eventsType.forEach((event) => { 
-        console.log(event)
-            btnEle.addEventListener(event, () => {
-                dropdownContEle.classList.toggle('visible');
-
-            })
-        })
-
-        // TODO: when click outside the dropdown menu, hide the dropdown menus again
-
+        
     }
 }
