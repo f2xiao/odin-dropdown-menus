@@ -1,7 +1,7 @@
 const template = document.createElement('template');
 template.innerHTML = `
 <div class="dropdown-container">
-    <button class="dropdown-btn">Click Me</button>
+    <button class="dropdown-btn"><slot name="name">Click me</slot></button>
     <ul class="dropdown-content">
         <li class="dropdown-item"><a href="#"><slot name="link1">Link 1</slot></a></li>
         <li class="dropdown-item"><a href="#"><slot name="link2">Link 2</slot></a></li>
