@@ -3,9 +3,9 @@ template.innerHTML = `
 <div class="dropdown-container">
     <button class="dropdown-btn">Click Me</button>
     <ul class="dropdown-content">
-        <li class="dropdown-item"><a href="#">link 1</a></li>
-        <li class="dropdown-item"><a href="#">link 2</a></li>
-        <li class="dropdown-item"><a href="#">link 3</a></li>
+        <li class="dropdown-item"><a href="#"><slot name="link1">Link 1</slot></a></li>
+        <li class="dropdown-item"><a href="#"><slot name="link2">Link 2</slot></a></li>
+        <li class="dropdown-item"><a href="#"><slot name="link3">Link 3</slot></a></li>
     </ul> 
 </div>
 `
