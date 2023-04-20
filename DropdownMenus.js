@@ -16,8 +16,8 @@ style.textContent = `
 .dropdown-container{
     display:flex;
     flex-direction: column;
-    max-width: 8rem;
-    margin: 1rem;
+    width: 8rem;
+    margin: 1rem 1rem 0;
     font-size: 1rem;
     align-items: start;
     justify-content: start;
@@ -70,6 +70,8 @@ style.textContent = `
    
     font-size: 1rem;
 }
+
+
 /* show the dropdown-content on hover */
 .visible{
     display: block;
@@ -82,23 +84,25 @@ export default class DropdownMenus extends HTMLElement {
         const shadow = this.attachShadow({mode: 'open'});
         shadow.appendChild(style);
         shadow.appendChild(template.content.cloneNode(true));
+        this.style.display = 'inline-block';
 
-        const btnEle = shadow.querySelector('.dropdown-btn');
         const dropdownContEle = shadow.querySelector('.dropdown-content');
 
         // retreve the type attribute value
         let type = this.getAttribute('type');
+        console.log(type)
 
-        // two types of dropdown-menus: 1. default/'hover' 2. 'click' type
-        if(type=='hover' || type == null){
-            // 1. default/'hover' type: hover the button to show/hide the menus
-            let eventsType = ['mouseover', 'mouseout'];
-            eventsType.forEach((event) => { 
-                    btnEle.addEventListener(event, () => {
-                        dropdownContEle.classList.toggle('visible');
-                    })
-                })
-        }else if(type == 'click'){
+        if(type='hover' || type == null){
+            
+            this.addEventListener('mouseover', () => {   
+                dropdownContEle.classList.toggle('visible')
+             });
+
+             this.addEventListener('mouseout', () => {   
+                dropdownContEle.classList.toggle('visible')
+             });
+            
+        }else if(type='click'){
             // 2. 'click' type: click to show and hide the menus
             window.addEventListener('click', (event) => { 
                 // click the dropdown-menus element to show/hide the menus
@@ -109,10 +113,9 @@ export default class DropdownMenus extends HTMLElement {
                     if(dropdownContEle.classList.contains('visible')){
                         dropdownContEle.classList.remove('visible');
                     }
-    
+
                 }
-             })
-    
+            })
         }
         
     }
