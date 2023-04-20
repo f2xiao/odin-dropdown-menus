@@ -93,7 +93,7 @@ export default class DropdownMenus extends HTMLElement {
         console.log(type)
 
         if(type='hover' || type == null){
-            
+            console.log(type);
             this.addEventListener('mouseover', () => {   
                 dropdownContEle.classList.toggle('visible')
              });
