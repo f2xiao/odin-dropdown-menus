@@ -1,58 +1,31 @@
+/* reset browser default styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
-  ul, li{
-    list-style-type: none;
+  ul, ol{
+    list-style: none;
   }
 
-  a, a:active {
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+
+  a {
+    color: inherit;
     text-decoration: none;
   }
 
-  .dropdown-container{
-    display:flex;
-    flex-direction: column;
-    max-width: 8rem;
-    margin: 1rem;
-    font-size: 1rem;
-    align-items: start;
-    justify-content: start;
-  }
-
-  .dropdown-btn {
-    background-color: #ccc;
-    color: white;
+  button, input[type="button"], input[type="reset"], input[type="submit"] {
+    appearance: none;
+    background-color: transparent;
     border: none;
-    display: inline-block;
-    text-align: start;
-    text-indent: 1rem;
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .dropdown-btn:hover, 
-  .dropdown-btn:active {
-    background-color: #666;
-  }
-
-  .dropdown-item{
-    padding: 10px 0;
-    border-radius: 5px;
-    width: 100%;
-    
-  }
-
-  .dropdown-item:hover, 
-  .dropdown-item:active{
-    background-color: orange;
-  }
-
-  .dropdown-item > a {
-    color: #999;
-    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    color: inherit;
+    font: inherit;
+    padding: 0;
   }

@@ -24,46 +24,51 @@ style.textContent = `
   }
 
   .dropdown-btn {
-    background-color: #ccc;
-    color: white;
-    border: none;
     display: inline-block;
-    text-align: start;
-    text-indent: 1rem;
+
     width: 100%;
     padding: 10px 0;
+    padding-left: 1rem;
     border-radius: 5px;
+    background-color: #666;
+
+    text-align: start;
+    color: white;
+
     cursor: pointer;
   }
 
   .dropdown-btn:hover, 
   .dropdown-btn:active {
-    background-color: #666;
+    background-color: #ccc;
   }
 
   .dropdown-item{
     padding: 10px 0;
     border-radius: 5px;
-    width: 100%;
-    
   }
 
-  .dropdown-item:hover, 
-  .dropdown-item:active{
-    background-color: orange;
+  .dropdown-item:hover{
+    background-color: #999;
   }
 
-  .dropdown-item > a {
-    color: #999;
-    width: 100%;
+  .dropdown-item > a:link {
+    padding-left: 1rem;
+
+    color: #666;
+    text-decoration: underline;
+  }
+
+  .dropdown-item > a:active  {
+    color: white;
   }
 
 /* dropdown content (hidden by default) */
 .dropdown-content{
-    width: 100%;
     display: none;
+    width: 100%;
+   
     font-size: 1rem;
-    text-indent: 1rem;
 }
 /* show the dropdown-content on hover */
 .visible{
