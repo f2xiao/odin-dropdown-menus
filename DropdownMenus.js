@@ -90,10 +90,8 @@ export default class DropdownMenus extends HTMLElement {
 
         // retreve the type attribute value
         let type = this.getAttribute('type');
-        console.log(type)
 
-        if(type='hover' || type == null){
-            console.log(type);
+        if(type=='hover' || type == null){
             this.addEventListener('mouseover', () => {   
                 dropdownContEle.classList.toggle('visible')
              });
@@ -102,7 +100,7 @@ export default class DropdownMenus extends HTMLElement {
                 dropdownContEle.classList.toggle('visible')
              });
             
-        }else if(type='click'){
+        }else if(type=='click'){
             // 2. 'click' type: click to show and hide the menus
             window.addEventListener('click', (event) => { 
                 // click the dropdown-menus element to show/hide the menus
